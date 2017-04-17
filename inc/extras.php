@@ -53,25 +53,24 @@ function _s_post_classes( $classes ) {
 	$classes = array_diff( $classes, array( 'hentry' ) );
 	if ( ! is_singular() ) {
 		if ( 'page' !== get_post_type() ) {
-			// Adds a class for microformats v2
+			// Adds a class for microformats v2.
 			$classes[] = 'h-entry';
-			// add hentry to the same tag as h-entry
+			// add hentry to the same tag as h-entry.
 			$classes[] = 'hentry';
 		}
 	}
 	return $classes;
 }
-
 add_filter( 'post_class', '_s_post_classes' );
 
 /**
- * Adds mf2 to avatar
+ * Adds mf2 to avatar.
  *
  * @param array             $args Arguments passed to get_avatar_data(), after processing.
- * @param int|string|object $id_or_email A user ID, email address, or comment object
+ * @param int|string|object $id_or_email A user ID, email address, or comment object.
  * @return array $args
  */
-function _s_get_avatar_data($args, $id_or_email) {
+function _s_get_avatar_data( $args, $id_or_email ) {
 	if ( ! isset( $args['class'] ) ) {
 		$args['class'] = array( 'u-photo' );
 	} else {
@@ -79,16 +78,17 @@ function _s_get_avatar_data($args, $id_or_email) {
 	}
 	return $args;
 }
-
 add_filter( 'get_avatar_data', '_s_get_avatar_data', 11, 2 );
 
 /**
  * Adds custom classes to the array of comment classes.
+ *
+ * @param array $classes
+ * @return array
  */
 function _s_comment_class( $classes ) {
 	$classes[] = 'u-comment';
 	$classes[] = 'h-cite';
 	return array_unique( $classes );
 }
-
 add_filter( 'comment_class', '_s_comment_class', 11 );
