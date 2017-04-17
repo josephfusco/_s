@@ -83,7 +83,7 @@ add_filter( 'get_avatar_data', '_s_get_avatar_data', 11, 2 );
 /**
  * Adds custom classes to the array of comment classes.
  *
- * @param array $classes
+ * @param array $classes Classes for the comment wrapper.
  * @return array
  */
 function _s_comment_class( $classes ) {

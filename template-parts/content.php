@@ -45,10 +45,11 @@
 
 	<footer class="entry-footer">
 		<?php
-	 	wp_link_pages( array(
+		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
 			'after'  => '</div>',
 		) );
-		 _s_entry_footer(); ?>
+		_s_entry_footer();
+		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
